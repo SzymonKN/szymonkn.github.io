@@ -1,0 +1,70 @@
+header{
+  width: 90%;
+  margin: 4%;
+
+  height: 270px;
+  display:block;
+
+}
+table{
+  display: inline-block;
+  float:right;
+}
+ul{
+  list-style-type:none;
+  display: block;
+  height: 50px;
+  width: 100%;
+  padding-top: 10px;
+}
+li{
+  display:inline-block;
+  float: right;
+}
+li.menuButtons:nth-child(2){
+  width: 80px;
+  height: 0;
+  position: relative;
+  border-right: 30px solid transparent;
+  border-top: 30px solid #edeff8;
+  box-sizing:   content-box;
+}
+li.menuButtons:nth-child(1){
+  width: 80px;
+  height: 0;
+  position: relative;
+  border-left: 30px solid transparent;
+  border-bottom: 30px solid #edeff8;
+  box-sizing:   content-box;
+}
+
+td{
+  padding-bottom: 10px;
+}
+
+#polishLanguage{
+  position: absolute;
+  top:5px;
+  right: 15px;
+}
+#englishLanguage{
+  position: absolute;
+  top: -25px;
+  left: 15px;
+}
+
+#myPhoto{
+  margin: 0;
+  display: inline-block;
+  float: left;
+  /*border: 5px solid white;*/
+  box-shadow: inset 0 0 5px white, 0 0 5px #edeff8;
+}
+#cvSign{
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Jura',sans-serif;
+margin-bottom: 20px;
+}

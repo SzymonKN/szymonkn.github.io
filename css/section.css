@@ -1,0 +1,28 @@
+.cvSection{
+  display: block;
+  width: 100%;
+margin-top: 10px;
+}
+.cvSection h1{
+  margin: 1% 5%;
+  text-transform: none;
+  font-family: 'Jura',sans-serif;
+  color: purple;
+}
+.horizontalLine{
+  width: 90%;
+  margin: 0 4%;
+  border-top: 1px solid black;
+}
+.educationTable{
+  width: 90%;
+  margin: 10px 5%;
+  font-weight: lighter;
+}
+.institutionEducation{
+  font-weight: bold;
+}
+.timeRangeEducation{
+  font-weight: bold;
+  color:purple;
+}
