@@ -25,6 +25,7 @@ li:hover{cursor:pointer;}
 li.menuButtons:nth-child(2){
   width: 80px;
   height: 0;
+  margin: 0 -20px;
   position: relative;
   border-right: 30px solid transparent;
   border-top: 30px solid #edeff8;
