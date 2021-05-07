@@ -2,6 +2,7 @@
   display: block;
   width: 100%;
 margin-top: 10px;
+min-height: 150px;
 }
 .cvSection h1{
   margin: 1% 5%;
@@ -16,7 +17,7 @@ margin-top: 10px;
 }
 .educationTable{
   width: 90%;
-  margin: 10px 5%;
+  margin: 10px 4%;
   font-weight: lighter;
 }
 .institutionEducation{
@@ -25,4 +26,45 @@ margin-top: 10px;
 .timeRangeEducation{
   font-weight: bold;
   color:purple;
+}
+
+.languagesKnowlege{
+  display: block;
+  width: 100%;
+  height: 100px;
+
+}
+.languagesKnowlege li{
+  display: block;
+  width: 90%;
+  float: none;
+  margin: 20px 6%;
+
+}
+.skillsTable{
+  width: 90%;
+  margin: 10px 4%;
+}
+.skillsTable td{
+  min-width: 120px;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: rgb(245,245,255);
+  text-align: center;
+}
+#linkSection{
+  width: 90%;
+  margin: 20px 6%;
+}
+#linkSection a{
+  text-decoration: none;
+  color: purple;
+  font-size: 20px;
+  display: block;
+  width: 90%;
+  margin: 10px 0;
+}
+p{
+  width: 85%;
+  margin: 20px 6%;
 }
