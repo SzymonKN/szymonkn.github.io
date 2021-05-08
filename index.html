@@ -3,17 +3,26 @@
   <head>
     <meta charset="utf-8">
     <title>Szymon Nowak Personal Information</title>
+
+    <!--  GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Jura&family=Play&display=swap" rel="stylesheet">
+
+    <!--  CSS FILES  -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/section.css">
+
+    <!--  JAVASCRIPT FILES  -->
     <script src="js/changeLanguage.js" charset="utf-8"></script>
   </head>
+
+
   <body onload="onLoad()">
     <div id="container">
+    <!-- HEADER -> PHOTO + LANG BUTTONS + BASIC INFO -->
     <header>
-      <ul>
+      <ul id="menuLanguage">
         <li class="menuButtons"><span class="langButtons" id="polishLanguage">Polski</span></li>
         <li class="menuButtons"><span class="langButtons" id="englishLanguage">English</span></li>
       </ul>
@@ -38,6 +47,8 @@
       </table>
       </div>
     </header>
+
+    <!--  EDUCATION SECTION  -->
     <div class="cvSection">
       <div class="polishVersion">
           <h1>Wykształcenie</h1>
@@ -110,6 +121,8 @@
             </table>
         </div>
 
+
+    <!--  LANGUAGE SECTION  -->
     </div>
     <div class="cvSection">
       <div class="polishVersion">
@@ -129,39 +142,22 @@
           </ul>
       </div>
     </div>
+
+
+    <!--  SKILLS SECTION  -->
     <div class="cvSection">
-      <div class="polishVersion">
-          <h1>Umiejętności</h1>
+      <div>
+          <h1 class="polishVersion">Umiejętności</h1>
+          <h1 class="englishVersion">Skills</h1>
+
           <div class="horizontalLine"></div>
           <table class="skillsTable">
             <tr>
               <td>Android</td>
               <td>Kotlin</td>
               <td>MVP</td>
-              <td>Rozpoczęcie przygody z Frameworkami: Dagger; RxJava; Retrofit</td>
-
-            </tr>
-            <tr>
-              <td>Java</td>
-              <td>Git</td>
-              <td>SQL</td>
-            </tr>
-            <tr>
-              <td>OOP</td>
-              <td>C++</td>
-            </tr>
-          </table>
-      </div>
-      <div class="englishVersion">
-          <h1>Skills</h1>
-          <div class="horizontalLine">  </div>
-          <table class="skillsTable">
-            <tr>
-              <td>Android</td>
-              <td>Kotlin</td>
-              <td>MVP</td>
-              <td>Starting adventure with Frameworks like: Dagger; RxJava; Retrofit</td>
-
+              <td class="polishVersion">Rozpoczęcie przygody z Frameworkami: Dagger; RxJava; Retrofit</td>
+              <td class="englishVersion">Starting adventure with Frameworks like: Dagger; RxJava; Retrofit</td>
             </tr>
             <tr>
               <td>Java</td>
@@ -176,6 +172,10 @@
       </div>
     </div>
 
+
+
+
+    <!--  HOBBY SECTION  -->
     <div class="cvSection">
       <div class="polishVersion">
           <h1>Zainteresowania</h1>
@@ -190,6 +190,9 @@
           <p>Cooking, music, amateur photography, amateur mountain trips, haircare</p>
       </div>
     </div>
+
+
+    <!-- LINKS SECTION -->
     <div class="cvSection">
       <div class="polishVersion">
           <h1>Linki</h1>
@@ -203,8 +206,23 @@
         <a href="https://github.com/SzymonKN">Github : SzymonKN</a>
         <a href="https://www.linkedin.com/in/szymon-nowak-532199207/">LinkedIn : Szymon Nowak</a>
       </div>
+    </div>
+
+
+    <div class="cvSection">
+      <h1 class="polishVersion">Projekty</h1>
+      <h1 class="englishVersion">Projects</h1>
+      <div class="horizontalLine"></div>
+
+
+      <div id="dynamicContent">
+
+      </div>
 
     </div>
+
+    <!--  CONSENT SECTION  -->
+
     <div class="cvSection">
       <div class="polishVersion">
           <h1>Zgody</h1>
@@ -212,7 +230,7 @@
 
           </div>
           <p>
-Wyrażam zgodę na przetwarzanie moich danych osobowych w celu rekrutacji zgodnie z art. 6 ust. 1 lit. a Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych)
+            Wyrażam zgodę na przetwarzanie moich danych osobowych w celu rekrutacji zgodnie z art. 6 ust. 1 lit. a Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych)
           </p>
       </div>
       <div class="englishVersion">
@@ -223,6 +241,8 @@ Wyrażam zgodę na przetwarzanie moich danych osobowych w celu rekrutacji zgodni
           <p>I agree to the processing of personal data provided in this document for realising the recruitment process pursuant to the Personal Data Protection Act of 10 May 2018 (Journal of Laws 2018, item 1000) and in agreement with Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation).</p>
       </div>
     </div>
+
+
     <footer>Created by Szymon Nowak 2021</footer>
     </div>
   </body>
