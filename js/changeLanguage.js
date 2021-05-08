@@ -25,4 +25,5 @@ function onLoad(){
      polish[i].style.display = 'none';
     }
   })
+
 }

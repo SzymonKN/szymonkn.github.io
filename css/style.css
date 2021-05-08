@@ -35,3 +35,17 @@ footer{
 .englishVersion{
   display: none;
 }
+#dynamicContent{
+  width: 90%;
+  margin: 15px 5%;
+}
+.dynamicFieldElements{
+  width: 48%;
+  margin: 10px 1%;
+  min-height: 150px;
+  display: inline-block;
+  text-align: center;
+  background-color: rgb(245,245,255);
+  padding: 15px 0;
+  border-radius: 5px;
+}

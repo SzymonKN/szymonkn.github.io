@@ -14,7 +14,29 @@
     <link rel="stylesheet" href="css/section.css">
 
     <!--  JAVASCRIPT FILES  -->
+    <script type="module">
+      import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
+      let dynamicField = document.getElementById('dynamicContent')
+      let octokit = new Octokit();
+      const resultRepos = await octokit.request('GET /users/{username}/repos', {
+  username: 'SzymonKN'
+})
+      for (var i = 0; i < resultRepos.data.length; i++) {
+        var dynamicDiv = document.createElement('div')
+        dynamicDiv.innerHTML = resultRepos.data[i].full_name.split("/")[1]
+        console.log(resultRepos.data[i].html_url)
+        dynamicDiv.classList.add('dynamicFieldElements')
+        dynamicDiv.setAttribute('href',resultRepos.data[i].html_url)
+       dynamicDiv.addEventListener('click',function(event) {
+            document.location.href = event.target.getAttribute('href')
+        })
+        dynamicField.appendChild(dynamicDiv)
+
+      }
+    </script>
     <script src="js/changeLanguage.js" charset="utf-8"></script>
+
+
   </head>
 
 
@@ -208,7 +230,7 @@
       </div>
     </div>
 
-
+    <!--  PROJECTS SECTION  -->
     <div class="cvSection">
       <h1 class="polishVersion">Projekty</h1>
       <h1 class="englishVersion">Projects</h1>
