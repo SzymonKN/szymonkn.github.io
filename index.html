@@ -15,12 +15,16 @@
 
     <!--  JAVASCRIPT FILES  -->
     <script type="module">
-      import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
-      let dynamicField = document.getElementById('dynamicContent')
-      let octokit = new Octokit();
-      const resultRepos = await octokit.request('GET /users/{username}/repos', {
-  username: 'SzymonKN'
-})
+    import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
+
+    let octokit = new Octokit();
+    let dynamicField = document.getElementById('dynamicContent')
+
+
+      octokit.request('GET /users/{username}/repos', {username: 'SzymonKN'})
+      .then(resultRepos =>{
+
+
       for (var i = 0; i < resultRepos.data.length; i++) {
         var dynamicDiv = document.createElement('div')
         dynamicDiv.innerHTML = resultRepos.data[i].full_name.split("/")[1]
@@ -33,6 +37,7 @@
         dynamicField.appendChild(dynamicDiv)
 
       }
+    })
     </script>
     <script src="js/changeLanguage.js" charset="utf-8"></script>
 
