@@ -1,52 +1,49 @@
 <!DOCTYPE html>
 <html lang=pl>
-  <head>
-    <meta charset="utf-8">
-    <title>Szymon Nowak Personal Information</title>
+<head>
+  <meta charset="utf-8">
+  <title>Szymon Nowak Personal Information</title>
 
-    <!--  GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Jura&family=Play&display=swap" rel="stylesheet">
+  <!--  GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Jura&family=Play&display=swap" rel="stylesheet">
 
-    <!--  CSS FILES  -->
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/section.css">
+  <!--  CSS FILES  -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/section.css">
 
-    <!--  JAVASCRIPT FILES  -->
-    <script type="module">
-    import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
+  <!--  JAVASCRIPT FILES  -->
+  <script type="module">
+  import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
 
-    let octokit = new Octokit();
-    let dynamicField = document.getElementById('dynamicContent')
-
-
-      octokit.request('GET /users/{username}/repos', {username: 'SzymonKN'})
-      .then(resultRepos =>{
+  let octokit = new Octokit();
+  let dynamicField = document.getElementById('dynamicContent')
 
 
-      for (var i = 0; i < resultRepos.data.length; i++) {
-        var dynamicDiv = document.createElement('div')
-        dynamicDiv.innerHTML = resultRepos.data[i].full_name.split("/")[1]
-        console.log(resultRepos.data[i].html_url)
-        dynamicDiv.classList.add('dynamicFieldElements')
-        dynamicDiv.setAttribute('href',resultRepos.data[i].html_url)
-       dynamicDiv.addEventListener('click',function(event) {
-            document.location.href = event.target.getAttribute('href')
-        })
-        dynamicField.appendChild(dynamicDiv)
+  octokit.request('GET /users/{username}/repos', {username: 'SzymonKN'})
+  .then(resultRepos =>{
+    for (var i = 0; i < resultRepos.data.length; i++) {
+      var dynamicDiv = document.createElement('div')
+      dynamicDiv.innerHTML = resultRepos.data[i].full_name.split("/")[1]
+      dynamicDiv.classList.add('dynamicFieldElements')
+      dynamicDiv.setAttribute('href',resultRepos.data[i].html_url)
+      dynamicDiv.addEventListener('click',function(event) {
+        document.location.href = event.target.getAttribute('href')
+      })
+      dynamicField.appendChild(dynamicDiv)
 
-      }
-    })
-    </script>
-    <script src="js/changeLanguage.js" charset="utf-8"></script>
-
-
-  </head>
+    }
+  })
+  </script>
+  <script src="js/changeLanguage.js" charset="utf-8"></script>
 
 
-  <body onload="onLoad()">
-    <div id="container">
+</head>
+
+
+<body onload="onLoad()">
+  <div id="container">
     <!-- HEADER -> PHOTO + LANG BUTTONS + BASIC INFO -->
     <header>
       <ul id="menuLanguage">
@@ -57,116 +54,116 @@
       <img src="CV_photo.JPG" alt="myPhoto" width="200px" id="myPhoto"/>
       <div class="polishVersion">
         <table class="personalInformation">
-        <tr><td>Imię i Nazwisko:</td><td>Szymon Nowak</td></tr>
-        <tr><td>Data urodzenia:</td><td>30.10.1997</td></tr>
-        <tr><td>Miejscowość:</td><td>Kraków</td></tr>
-        <tr><td>Telefon:</td><td>503540832</td></tr>
-        <tr><td>E-mail:</td><td>szymon.skn@gmail.com</td></tr>
-      </table>
+          <tr><td>Imię i Nazwisko:</td><td>Szymon Nowak</td></tr>
+          <tr><td>Data urodzenia:</td><td>30.10.1997</td></tr>
+          <tr><td>Miejscowość:</td><td>Kraków</td></tr>
+          <tr><td>Telefon:</td><td>503540832</td></tr>
+          <tr><td>E-mail:</td><td>szymon.skn@gmail.com</td></tr>
+        </table>
       </div>
       <div class="englishVersion">
         <table class="personalInformation">
-        <tr><td>Name & Surname:</td><td>Szymon Nowak</td></tr>
-        <tr><td>Birth date:</td><td>30.10.1997</td></tr>
-        <tr><td>City:</td><td>Kraków</td></tr>
-        <tr><td>Phone number:</td><td>503540832</td></tr>
-        <tr><td>E-mail:</td><td>szymon.skn@gmail.com</td></tr>
-      </table>
+          <tr><td>Name & Surname:</td><td>Szymon Nowak</td></tr>
+          <tr><td>Birth date:</td><td>30.10.1997</td></tr>
+          <tr><td>City:</td><td>Kraków</td></tr>
+          <tr><td>Phone number:</td><td>503540832</td></tr>
+          <tr><td>E-mail:</td><td>szymon.skn@gmail.com</td></tr>
+        </table>
       </div>
     </header>
 
     <!--  EDUCATION SECTION  -->
     <div class="cvSection">
       <div class="polishVersion">
-          <h1>Wykształcenie</h1>
-          <div class="horizontalLine"></div>
-          <table class="educationTable">
-            <tr>
-              <td class="timeRangeEducation"> 10.2017 - 02.2021</td>
-            </tr>
-            <tr>
-              <td class="institutionEducation">Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie</td>
-            </tr>
-            <tr>
-              <td class="facultyEducation">Wydział Fizyki i Informatyki Stosowanej</td>
-            </tr>
-            <tr>
-              <td class="fieldOfStudyEducation">Informatyka Stosowana</td>
-            </tr>
-            <tr>
-              <td class="academicDegree"> Inżynier</td>
-            </tr>
-          </table>
+        <h1>Wykształcenie</h1>
+        <div class="horizontalLine"></div>
+        <table class="educationTable">
+          <tr>
+            <td class="timeRangeEducation"> 10.2017 - 02.2021</td>
+          </tr>
+          <tr>
+            <td class="institutionEducation">Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie</td>
+          </tr>
+          <tr>
+            <td class="facultyEducation">Wydział Fizyki i Informatyki Stosowanej</td>
+          </tr>
+          <tr>
+            <td class="fieldOfStudyEducation">Informatyka Stosowana</td>
+          </tr>
+          <tr>
+            <td class="academicDegree"> Inżynier</td>
+          </tr>
+        </table>
 
-          <table class="educationTable">
-            <tr>
-              <td class="timeRangeEducation"> 09.2013 - 05.2017</td>
-            </tr>
-            <tr>
-              <td class="institutionEducation">Zespół Szkół Łączności w Krakowie</td>
-            </tr>
+        <table class="educationTable">
+          <tr>
+            <td class="timeRangeEducation"> 09.2013 - 05.2017</td>
+          </tr>
+          <tr>
+            <td class="institutionEducation">Zespół Szkół Łączności w Krakowie</td>
+          </tr>
 
-            <tr>
-              <td class="fieldOfStudyEducation">Technik Informatyk</td>
-            </tr>
-            <tr>
-              <td class="academicDegree"> Średnie</td>
-            </tr>
-          </table>
+          <tr>
+            <td class="fieldOfStudyEducation">Technik Informatyk</td>
+          </tr>
+          <tr>
+            <td class="academicDegree"> Średnie</td>
+          </tr>
+        </table>
       </div>
       <div class="englishVersion">
-          <h1>Education</h1>
-          <div class="horizontalLine"></div>
-            <table class="educationTable">
-              <tr>
-                <td class="timeRangeEducation"> 10.2017 - 02.2021</td>
-              </tr>
-              <tr>
-                <td class="institutionEducation">AGH University of Science and Technology in Cracow</td>
-              </tr>
-              <tr>
-                <td class="facultyEducation">Faculty of Phisics and Aplied Computer Science</td>
-              </tr>
-              <tr>
-                <td class="fieldOfStudyEducation">Aplied Computer Science</td>
-              </tr>
-              <tr>
-                <td class="academicDegree"> Engineer / Bachelor</td>
-              </tr>
-            </table>
+        <h1>Education</h1>
+        <div class="horizontalLine"></div>
+        <table class="educationTable">
+          <tr>
+            <td class="timeRangeEducation"> 10.2017 - 02.2021</td>
+          </tr>
+          <tr>
+            <td class="institutionEducation">AGH University of Science and Technology in Cracow</td>
+          </tr>
+          <tr>
+            <td class="facultyEducation">Faculty of Phisics and Aplied Computer Science</td>
+          </tr>
+          <tr>
+            <td class="fieldOfStudyEducation">Aplied Computer Science</td>
+          </tr>
+          <tr>
+            <td class="academicDegree"> Engineer / Bachelor</td>
+          </tr>
+        </table>
 
-            <table class="educationTable">
-              <tr>
-                <td class="timeRangeEducation"> 09.2013 - 05.2017</td>
-              </tr>
-              <tr>
-                <td class="institutionEducation">Upper-Secondary Technical Schools of Communications in Cracow</td>
-              </tr>
-              <tr>
-                <td class="fieldOfStudyEducation">IT Technician</td>
-              </tr>
-            </table>
-        </div>
+        <table class="educationTable">
+          <tr>
+            <td class="timeRangeEducation"> 09.2013 - 05.2017</td>
+          </tr>
+          <tr>
+            <td class="institutionEducation">Upper-Secondary Technical Schools of Communications in Cracow</td>
+          </tr>
+          <tr>
+            <td class="fieldOfStudyEducation">IT Technician</td>
+          </tr>
+        </table>
+      </div>
 
 
-    <!--  LANGUAGE SECTION  -->
+      <!--  LANGUAGE SECTION  -->
     </div>
     <div class="cvSection">
       <div class="polishVersion">
-          <h1>Znajomość języków</h1>
-          <div class="horizontalLine"></div>
-          <ul class="languagesKnowlege">
-              <li>Język Angielski - średniozaawansowany</li>
-              <li>Język Polski - ojczysty</li>
-          </ul>
+        <h1>Znajomość języków</h1>
+        <div class="horizontalLine"></div>
+        <ul class="languagesKnowlege">
+          <li>Język Angielski - średniozaawansowany</li>
+          <li>Język Polski - ojczysty</li>
+        </ul>
       </div>
       <div class="englishVersion">
-          <h1>Languages</h1>
-          <div class="horizontalLine"></div>
-          <ul class="languagesKnowlege">
-              <li>English - Upper-Intermediate</li>
-              <li>Polish - Native</li>
-          </ul>
+        <h1>Languages</h1>
+        <div class="horizontalLine"></div>
+        <ul class="languagesKnowlege">
+          <li>English - Upper-Intermediate</li>
+          <li>Polish - Native</li>
+        </ul>
       </div>
     </div>
 
@@ -174,28 +171,28 @@
     <!--  SKILLS SECTION  -->
     <div class="cvSection">
       <div>
-          <h1 class="polishVersion">Umiejętności</h1>
-          <h1 class="englishVersion">Skills</h1>
+        <h1 class="polishVersion">Umiejętności</h1>
+        <h1 class="englishVersion">Skills</h1>
 
-          <div class="horizontalLine"></div>
-          <table class="skillsTable">
-            <tr>
-              <td>Android</td>
-              <td>Kotlin</td>
-              <td>MVP</td>
-              <td class="polishVersion">Rozpoczęcie przygody z Frameworkami: Dagger; RxJava; Retrofit</td>
-              <td class="englishVersion">Starting adventure with Frameworks like: Dagger; RxJava; Retrofit</td>
-            </tr>
-            <tr>
-              <td>Java</td>
-              <td>Git</td>
-              <td>SQL</td>
-            </tr>
-            <tr>
-              <td>OOP</td>
-              <td>C++</td>
-            </tr>
-          </table>
+        <div class="horizontalLine"></div>
+        <table class="skillsTable">
+          <tr>
+            <td>Android</td>
+            <td>Kotlin</td>
+            <td>MVP</td>
+            <td class="polishVersion">Rozpoczęcie przygody z Frameworkami: Dagger; RxJava; Retrofit</td>
+            <td class="englishVersion">Starting adventure with Frameworks like: Dagger; RxJava; Retrofit</td>
+          </tr>
+          <tr>
+            <td>Java</td>
+            <td>Git</td>
+            <td>SQL</td>
+          </tr>
+          <tr>
+            <td>OOP</td>
+            <td>C++</td>
+          </tr>
+        </table>
       </div>
     </div>
 
@@ -205,16 +202,16 @@
     <!--  HOBBY SECTION  -->
     <div class="cvSection">
       <div class="polishVersion">
-          <h1>Zainteresowania</h1>
-          <div class="horizontalLine">
+        <h1>Zainteresowania</h1>
+        <div class="horizontalLine">
 
-          </div>
-          <p>Gotowanie, muzyka, amatorska fotografia, amatorskie wycieczki górskie, włosing</p>
+        </div>
+        <p>Gotowanie, muzyka, amatorska fotografia, amatorskie wycieczki górskie, włosing</p>
       </div>
       <div class="englishVersion">
-          <h1>Hobby</h1>
-          <div class="horizontalLine"></div>
-          <p>Cooking, music, amateur photography, amateur mountain trips, haircare</p>
+        <h1>Hobby</h1>
+        <div class="horizontalLine"></div>
+        <p>Cooking, music, amateur photography, amateur mountain trips, haircare</p>
       </div>
     </div>
 
@@ -222,12 +219,12 @@
     <!-- LINKS SECTION -->
     <div class="cvSection">
       <div class="polishVersion">
-          <h1>Linki</h1>
-          <div class="horizontalLine"></div>
+        <h1>Linki</h1>
+        <div class="horizontalLine"></div>
       </div>
       <div class="englishVersion">
-          <h1>Links</h1>
-          <div class="horizontalLine"></div>
+        <h1>Links</h1>
+        <div class="horizontalLine"></div>
       </div>
       <div id="linkSection">
         <a href="https://github.com/SzymonKN">Github : SzymonKN</a>
@@ -252,25 +249,25 @@
 
     <div class="cvSection">
       <div class="polishVersion">
-          <h1>Zgody</h1>
-          <div class="horizontalLine">
+        <h1>Zgody</h1>
+        <div class="horizontalLine">
 
-          </div>
-          <p>
-            Wyrażam zgodę na przetwarzanie moich danych osobowych w celu rekrutacji zgodnie z art. 6 ust. 1 lit. a Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych)
-          </p>
+        </div>
+        <p>
+          Wyrażam zgodę na przetwarzanie moich danych osobowych w celu rekrutacji zgodnie z art. 6 ust. 1 lit. a Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych)
+        </p>
       </div>
       <div class="englishVersion">
-          <h1>Consent</h1>
-          <div class="horizontalLine">
+        <h1>Consent</h1>
+        <div class="horizontalLine">
 
-          </div>
-          <p>I agree to the processing of personal data provided in this document for realising the recruitment process pursuant to the Personal Data Protection Act of 10 May 2018 (Journal of Laws 2018, item 1000) and in agreement with Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation).</p>
+        </div>
+        <p>I agree to the processing of personal data provided in this document for realising the recruitment process pursuant to the Personal Data Protection Act of 10 May 2018 (Journal of Laws 2018, item 1000) and in agreement with Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation).</p>
       </div>
     </div>
 
 
     <footer>Created by Szymon Nowak 2021</footer>
-    </div>
-  </body>
+  </div>
+</body>
 </html>

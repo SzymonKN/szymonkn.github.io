@@ -1,8 +1,8 @@
 .cvSection{
   display: block;
   width: 100%;
-margin-top: 10px;
-min-height: 150px;
+  margin-top: 10px;
+  min-height: 150px;
 }
 .cvSection h1{
   margin: 1% 5%;
