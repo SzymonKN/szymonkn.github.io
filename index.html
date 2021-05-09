@@ -23,9 +23,10 @@
 
   octokit.request('GET /users/{username}/repos', {username: 'SzymonKN'})
   .then(resultRepos =>{
+    console.log(resultRepos.data[0])
     for (var i = 0; i < resultRepos.data.length; i++) {
       var dynamicDiv = document.createElement('div')
-      dynamicDiv.innerHTML = resultRepos.data[i].full_name.split("/")[1]
+      dynamicDiv.innerHTML = resultRepos.data[i].name
       dynamicDiv.classList.add('dynamicFieldElements')
       dynamicDiv.setAttribute('href',resultRepos.data[i].html_url)
       dynamicDiv.addEventListener('click',function(event) {
@@ -35,8 +36,9 @@
 
     }
   })
-  </script>
-  <script src="js/changeLanguage.js" charset="utf-8"></script>
+
+</script>
+<script src="js/changeLanguage.js" charset="utf-8"></script>
 
 
 </head>
@@ -71,7 +73,6 @@
         </table>
       </div>
     </header>
-
     <!--  EDUCATION SECTION  -->
     <div class="cvSection">
       <div class="polishVersion">
